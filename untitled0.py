@@ -18,14 +18,18 @@ class Avtale:
         self.varighet = varighet
         
     def __str__(self):
-        return 'Avtalen {self.tittel} finner sted ved {self.sted}, starter {self.starttidspunkt} og varer i {self.varighet}.'.format(self=self)
-    
+        return 'Avtalen {self.tittel} finner sted ved {self.sted}, starter {self.starttidspunkt} og varer i {self.varighet} timer.'.format(self=self)
+        
 while True:
     try:
-        starttidspunkt = int(input('Please input the time for the alarm in format HHMM: \n '))
+        tittel = input('Tittel på avtale: ')
+        sted = input('Hvor er avtalen?: ')
+        starttidspunkt = int(input('Skriv inn tid i dette formatet HHMM: '))
+        varighet = int(input('Skriv inn varighet som et heltall i timer: '))
         break
     except ValueError:
         print('Bruk kun tall for å skrive starttidspunkt.')
+      
 
 for obj in list:
     obj.__str__
@@ -33,7 +37,7 @@ for obj in list:
             
     
 
-avtale_1 = Avtale('Fiske med Vegard', 'En elv', starttidspunkt, '3 timer')
+avtale_1 = Avtale(tittel, sted, starttidspunkt, varighet)
 
 print(avtale_1)
 
